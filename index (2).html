@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .section-title {
+            @apply text-3xl font-bold text-center mb-12 text-gray-800;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105;
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700;
+        }
+        .nav-link-active {
+            @apply bg-gray-900 text-white;
+        }
+        .mobile-nav-link {
+            @apply block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700;
+        }
+        .form-input {
+            @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500;
+        }
+        .btn {
+            @apply px-6 py-3 rounded-lg font-semibold text-white transition-colors duration-300;
+        }
+        .btn-primary {
+            @apply bg-indigo-600 hover:bg-indigo-700;
+        }
+        .btn-secondary {
+            @apply bg-pink-500 hover:bg-pink-600;
+        }
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <nav class="bg-gray-800 fixed w-full z-20 top-0 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-white font-bold text-xl">Your Name</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link nav-link-active" id="nav-home">Home</a>
+                        <a href="#about" class="nav-link" id="nav-about">About</a>
+                        <a href="#projects" class="nav-link" id="nav-projects">Projects</a>
+                        <a href="#skills" class="nav-link" id="nav-skills">Skills</a>
+                        <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link block" id="mobile-nav-home">Home</a>
+                <a href="#about" class="mobile-nav-link block" id="mobile-nav-about">About</a>
+                <a href="#projects" class="mobile-nav-link block" id="mobile-nav-projects">Projects</a>
+                <a href="#skills" class="mobile-nav-link block" id="mobile-nav-skills">Skills</a>
+                <a href="#contact" class="mobile-nav-link block" id="mobile-nav-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg text-white pt-32 pb-20 md:pt-40 md:pb-28 min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <img src="https://placehold.co/150x150/ffffff/764ba2?text=You" alt="Your Name - Profile Picture" class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full shadow-2xl mb-8 border-4 border-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm [Your Name]</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200">I'm a [Your Profession/Title] based in [Your City].</p>
+            <a href="#contact" class="btn btn-primary text-lg mr-2 mb-2 md:mb-0">Get in Touch</a>
+            <a href="#projects" class="btn btn-secondary text-lg ml-0 md:ml-2">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">About Me</h2>
+            <div class="max-w-3xl mx-auto text-center text-gray-700 text-lg leading-relaxed">
+                <p class="mb-4">
+                    Hello! I'm [Your Name], a passionate and dedicated [Your Profession/Title] with a love for creating innovative and impactful solutions. I have experience in [mention 1-2 key areas or technologies].
+                </p>
+                <p class="mb-4">
+                    My journey into [Your Field] began with [briefly mention your inspiration or starting point]. Since then, I've been committed to honing my skills and contributing to meaningful projects. I thrive in collaborative environments and enjoy tackling complex challenges.
+                </p>
+                <p>
+                    When I'm not coding or designing, you can find me [mention a hobby or interest], or exploring [another hobby/interest]. I'm always eager to learn new things and connect with like-minded individuals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="card">
+                    <img src="https://placehold.co/600x400/667eea/ffffff?text=Project+1" alt="Project 1 Screenshot" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Project Title 1</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A brief description of the project. What it does, the technologies used, and your role.</p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/764ba2/ffffff?text=Project+2" alt="Project 2 Screenshot" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Project Title 2</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Another cool project. Explain the problem it solves and the impact it had, if any.</p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/38b2ac/ffffff?text=Project+3" alt="Project 3 Screenshot" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Project Title 3</h3>
+                        <p class="text-gray-600 mb-4 text-sm">This project showcases skills in X, Y, and Z. Highlight key features and learnings.</p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Skills</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fab fa-html5 text-5xl text-orange-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">HTML5</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fab fa-css3-alt text-5xl text-blue-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">CSS3</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fab fa-js-square text-5xl text-yellow-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">JavaScript</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fab fa-react text-5xl text-blue-400 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">React</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-database text-5xl text-green-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">Databases</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fab fa-python text-5xl text-indigo-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">Python</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fab fa-git-alt text-5xl text-red-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">Git</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-feather-alt text-5xl text-teal-500 mb-3"></i>
+                        <h4 class="font-semibold text-lg text-gray-700">UI/UX Design</h4>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-xl">
+                <p class="text-center text-gray-600 mb-8">
+                    Have a question or want to work together? Feel free to reach out!
+                </p>
+                <form id="contactForm">
+                    <div class="mb-6">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john.doe@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block mb-2 text-sm font-medium text-gray-700">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-input" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-full md:w-auto">Send Message</button>
+                    </div>
+                </form>
+                <div id="form-message" class="mt-6 text-center"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <a href="#" class="mx-2 text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="mx-2 text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="mx-2 text-gray-400 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                </div>
+            <p class="text-sm text-gray-400">&copy; <span id="currentYear"></span> [Your Name]. All rights reserved.</p>
+            <p class="text-xs text-gray-500 mt-1">Designed with <i class="fas fa-heart text-pink-500"></i> using Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="fixed bottom-5 right-5 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg hidden transition-opacity duration-300" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scrolling for anchor links & active nav state
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Active navigation link highlighting on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]'); // Desktop nav
+        const mobileNavLinksAll = document.querySelectorAll('#mobile-menu a[href^="#"]'); // Mobile nav
+
+        function changeNav(targetId) {
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active');
+                if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add('nav-link-active');
+                }
+            });
+            mobileNavLinksAll.forEach(link => {
+                link.classList.remove('bg-gray-700', 'text-white'); // Example active style for mobile
+                 if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add('bg-gray-700', 'text-white');
+                }
+            });
+        }
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.4 // Adjust this value to change when the link becomes active
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    changeNav(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Contact Form Submission (Placeholder)
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Basic client-side validation (you'd want more robust validation)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                formMessage.innerHTML = '<p class="text-red-500">Please fill in all required fields.</p>';
+                return;
+            }
+            
+            // Simulate form submission
+            formMessage.innerHTML = '<p class="text-green-500">Thank you for your message! I will get back to you soon.</p>';
+            contactForm.reset(); // Clear the form
+
+            // In a real application, you would send this data to a server
+            // For example, using fetch API:
+            /*
+            const formData = new FormData(contactForm);
+            fetch('/your-server-endpoint', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                formMessage.innerHTML = '<p class="text-green-500">Message sent successfully!</p>';
+                contactForm.reset();
+            })
+            .catch(error => {
+                formMessage.innerHTML = '<p class="text-red-500">Sorry, something went wrong. Please try again.</p>';
+                console.error('Error:', error);
+            });
+            */
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.add('hidden');
+                backToTopBtn.classList.remove('opacity-100');
+            }
+        };
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+    </script>
+</body>
+</html>
+
